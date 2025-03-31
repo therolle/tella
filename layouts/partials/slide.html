@@ -1,13 +1,13 @@
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-        {{ range .Site.Data.slide }}
-        <div class="swiper-slide">
-            <img src="{{ .image }}" alt="{{ .alt }}">
-            <div class="s-fade-txt">
-                <h1 class="text-4xl {{ or .color "text-white" }}">{{ .title }}</h1>
-            </div>
+<div class="swiper-container overflow-hidden" style="height: 500px;">
+    <div class="swiper-wrapper h-full">
+      {{ range .Site.Data.slide }}
+      <div class="swiper-slide relative h-full">
+        <img src="{{ .image }}" alt="{{ .alt }}" class="w-full h-full object-cover">
+        <div class="s-fade-txt absolute bottom-10 left-10 z-10">
+          <h1 class="text-4xl {{ or .color "text-white" }}">{{ .title }}</h1>
         </div>
-        {{ end }}
+      </div>
+      {{ end }}
     </div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
